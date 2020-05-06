@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href= "./assets/style.css">
+  <title>Work Day Scheduler</title>
+</head>
+
+<body>
+    
+
+<!-- Navbar -->
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-text">
+      Day Planner Beta 1.0
+    </span>
+
+    <span class="navbar-text" id="currentHour">Hour: </span>
+  </nav>
+
+<!--jumbotron -->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-6">Work Day Scheduler</h1>
+      <p class="display-8" id="date"></p>
+    </div>
+  </div>
+
+<!-- Task Section -->
+<div class="container center">
+
+
+<div class="container">
+    <div class="row time-block center" id="hour9">
+        <div class="col-md-2 hour">
+            <h3>9A</h3>
+        </div>
+        <textarea class="col-md-8 task" id="task-9" data-hour="9"> </textarea>
+        <button class="col-md-1 save btn btn-primary"  data-hour="9">Save</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row time-block center" id="hour10">
+        <div class="col-md-2 hour">
+            <h3>10A</h3>
+        </div>
+        <textarea class="col-md-8 task" id="task-10" data-hour="10"> </textarea>
+        <button class="col-md-1 save btn btn-primary"  data-hour="10">Save</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row time-block center" id="hour11">
+        <div class="col-md-2 hour">
+             <h3>11A</h3>
+        </div>
+        <textarea class="col-md-8 task" id="task-11" data-hour="11"> </textarea>
+        <button class="col-md-1 save btn btn-primary"  data-hour="11">Save</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row time-block center" id="hour12">
+        <div class="col-md-2 hour">
+            <h3>12P</h3>
+        </div>
+        <textarea class="col-md-8 task" id="task-12" data-hour="12"> </textarea>
+        <button class="col-md-1 save btn btn-primary"  data-hour="12">Save</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row time-block center" id="hour13">
+        <div class="col-md-2 hour">
+            <h3>1P</h3>
+        </div>
+        <textarea class="col-md-8 task" id="task-13" data-hour="13"> </textarea>
+        <button class="col-md-1 save btn btn-primary" data-hour="13">Save</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row time-block center" id="hour14">
+        <div class="col-md-2 hour">
+             <h3>2P</h3>
+        </div>
+        <textarea class="col-md-8 task" id="task-14" data-hour="14"> </textarea>
+        <button class="col-md-1 save btn btn-primary"  data-hour="14">Save</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row time-block center" id="hour15">
+        <div class="col-md-2 hour">
+            <h3>3P</h3>
+        </div>
+        <textarea class="col-md-8 task" id="task-15" data-hour="15"> </textarea>
+        <button class="col-md-1 save btn btn-primary"  data-hour="15">Save</button>
+    </div>
+</div>
+
+<div class="container last">
+    <div class="row time-block center" id="hour16">
+        <div class="col-md-2 hour">
+            <h3>4P</h3>
+        </div>
+        <textarea class="col-md-8 task" id="task-16" data-hour="16"> </textarea>
+        <button class="col-md-1 save btn btn-primary"  data-hour="16">Save</button>
+    </div>
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="./script.js"></script>
+
+</body>
+
+<footer>
+   <p>Day Planner - Made by Christopher Sipe</p>
+</footer>

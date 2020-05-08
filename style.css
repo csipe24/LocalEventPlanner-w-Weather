@@ -1,0 +1,27 @@
+#nav-elements {
+    padding-left: 2em;
+}
+#logo {
+    font-family: 'Noto Sans KR', sans-serif ;
+    font-weight: bold;
+    font-size: 3em;
+    padding-left: 3px;
+    color: whitesmoke;
+
+}
+
+#accent {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 3em;
+    color: firebrick;
+    
+}
+
+nav {
+    height: 5em;
+   
+}
+
+.navbar-link {
+    color: whitesmoke;
+}

@@ -19,14 +19,32 @@
 
 nav {
     height: 5em;
-   
+    position: fixed;
+   border-bottom: 1px solid rgb(104, 104, 104);
 }
 
 .navbar-link {
     color: whitesmoke;
 }
 
-.tile {
+/* body styling */
+body {
     background-color: black;
-    color: white;
 }
+
+
+article {
+    border: 1px solid rgb(104, 104, 104);
+   
+
+}
+
+.title{
+    color: rgb(104, 104, 104);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.hero {
+    border-bottom: 1px solid rgb(104, 104, 104);
+    margin-top: 3em;
+}
+

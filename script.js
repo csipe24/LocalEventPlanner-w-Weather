@@ -1,9 +1,23 @@
 //Listner for on Submit
-$("#submit").submit(function(event){
+
+
+console.log("Test");
+$("#target").submit(function(event){
+event.preventDefault();
+console.log("Button Pushed");
+
+})
+
+/*
+console.log("FUCK");
+$("#target").submit(function(event){
+
+    console.log("Yo dawg nice submit");
+    
 //Prevent Default on submit behavior//
     event.preventDefault();
 
-            //Get locally scoped variables//
+//Get locally scoped variables//
     var city = 'city'+$("#cityInput").val() +'&';
     var zipCode = 'zipcode'+ $("#zipCode").val() +'&';
     var searchterm = 'searchterm' + $("#searchterm").val() + '&';
@@ -14,7 +28,7 @@ $("#submit").submit(function(event){
     $.ajax({
         type:"GET",
         url:"https://app.ticketmaster.com/discovery/v2/events.json?city=Bellevue&apikey=Thva5NLv6RrCnjjzN4yuMRNhH38NosOs",
-        url: "https://app.ticketmaster.com/discovery/v2/events.json?"+city+zipCode+searchter+startdate+enddate+"&apikey=Thva5NLv6RrCnjjzN4yuMRNhH38NosOs";
+        //url: "https://app.ticketmaster.com/discovery/v2/events.json?"+city+zipCode+searchter+startdate+enddate+"&apikey=Thva5NLv6RrCnjjzN4yuMRNhH38NosOs";
         async:true,
         dataType: "json",
         success: function(json) {
@@ -32,3 +46,7 @@ $("#submit").submit(function(event){
     });
 
 })
+
+//Title 
+//Description
+//Image*/

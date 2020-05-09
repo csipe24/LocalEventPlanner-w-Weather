@@ -25,3 +25,8 @@ nav {
 .navbar-link {
     color: whitesmoke;
 }
+
+.tile {
+    background-color: black;
+    color: white;
+}

@@ -59,6 +59,29 @@ var queryURL = url+"q="+city+"&zip="+zipcode+"&appid="+apiKey;
       console.log(response);
       });
 
+
+
+// Get Location code
+
+navigator.geolocation.getCurrentPosition((position) => {
+   console.log(position.coords.latitude, position.coords.longitude);
+ });
+
+function getLocation(){
+   var url = "http://www.mapquestapi.com/geocoding/v1/reverse?";
+   var apiKey = "MvofEA2Pb5LX3ICTEmaoy3G6Nr4kHa07";
+   var latitude = "47.445134";
+   var longitude ="-122.161948";
+   var queryURL = url+"key="+apiKey+"&location="+latitude+","+longitude;
+
+     $.ajax({
+             url: queryURL,
+             method: "GET"
+           }).then(function(response) {
+             console.log(response.results[0].locations[0].adminArea5);
+           });
+};
+
 // Store response object into variable
 
 // Append spesific data from object to weather div

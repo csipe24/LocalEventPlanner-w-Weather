@@ -117,3 +117,8 @@ article {
         transform: translateX(-100%);
     }
 }
+
+.footer {
+    background-color: hsl(0, 0%, 21%);
+    color: whitesmoke;
+}

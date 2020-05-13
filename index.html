@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     
-    <title>InMy City</title>
+    <title>In My City</title>
 </head>
 <body>
 <nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
@@ -43,11 +43,24 @@
            
             </div>
         </div>
+      
+      <div class="eventdate">
+        <form action="/action_page.php">
+        <input class="input is-danger is-rounded" type="date" id="eventdate">
+        </form>
+      </div>      
+         
+          </div>
+        </div>
+        
         </div>
 
         <div id= "search-field" class="field">
             <div class="control">
-              <input class="input is-danger is-rounded" type="text" placeholder="Search" id="searchInput"> <button class="button is-danger is-rounded" id="searchButton">Danger</button>
+
+              <input class="input is-danger is-rounded" type="text" placeholder="Search"> <button class="button is-danger is-rounded" style="position: absolute; right: 0;"><img id="searchIcon" src="search.png" width="25" height="40"></button>
+
+
             </div>
           </div>
 
@@ -58,10 +71,9 @@
 </nav>
 <section class="hero is-dark">
   <div class="hero-body">
-    <div class="container">
-      <h1 class="weather-title title">
-        Weather goes here
-      </h1>
+    <div id="weather-div" class="container">
+      
+        
       
     </div>
   </div>

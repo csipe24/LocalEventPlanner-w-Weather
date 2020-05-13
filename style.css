@@ -26,6 +26,13 @@ nav {
 .navbar-link {
     color: whitesmoke;
 }
+.control {
+    padding-top: 20px;
+}
+.eventdate {
+    padding-top: 20px;
+    padding-right: 5px;
+}
 
 /* body styling */
 body {

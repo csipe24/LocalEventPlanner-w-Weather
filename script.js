@@ -6,7 +6,6 @@ $(dateEl).text(moment(new Date()).format("dddd, MMM Do YYYY, h:mm a"));
 
 // Get Location code
 navigator.geolocation.getCurrentPosition((position) => {
-console.log(position.coords.latitude, position.coords.longitude);
 var latitude = position.coords.latitude;
 var longitude = position.coords.longitude;
 var url = "http://www.mapquestapi.com/geocoding/v1/reverse?";
@@ -16,7 +15,6 @@ var queryURL = url+"key="+apiKey+"&location="+latitude+","+longitude;
           url: queryURL,
           method: "GET"
             }).then(function(response) {
-              console.log(response);
           console.log(response.results[0].locations[0].adminArea5);
           var weatherCity = response.results[0].locations[0].adminArea5;
           getWeather(weatherCity);
@@ -58,8 +56,20 @@ $.ajax({
   url: queryURL,
   method: "GET"
   }).then(function(response) {
-  console.log(response._embedded.events);
-  });
+    console.log(response._embedded.events);
+  for(i=0; i<10; i++){
+    var eventPic = response._embedded.events[i].images[0].url;
+    var eventName = response._embedded.events[i].name;
+    var eventDes = response._embedded.events[i].dates.start.localDate;
+    var eventLink = response._embedded.events[i].url;
+
+    $("#pic"+(i+1)).attr("src", eventPic);
+    $("#pic"+(i+1)).css({"width": "100%", "height": "80%"});
+    $("#name"+(i+1)).html(eventName);
+    $("#des"+(i+1)).text(eventDes);
+
+    };
+  })
 };
 
 

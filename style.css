@@ -121,4 +121,6 @@ article {
 .footer {
     background-color: hsl(0, 0%, 21%);
     color: whitesmoke;
+    border-top: solid 1px rgb(104, 104, 104);
+    margin-top: 6em;
 }

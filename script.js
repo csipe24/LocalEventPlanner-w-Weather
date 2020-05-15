@@ -1,39 +1,3 @@
-<<<<<<< HEAD
-//Listner for on Submit
-$("#submit").submit(function(event){
-//Prevent Default on submit behavior//
-    event.preventDefault();
-
-            //Get locally scoped variables//
-    var city = 'city'+$("#cityInput").val() +'&';
-    var zipCode = 'zipcode'+ $("#zipCode").val() +'&';
-    var searchterm = 'searchterm' + $("#searchterm").val() + '&';
-    var startdate  = 'startdate'+ $("startdate").value +'&';
-    var enddate  = 'enddate'+ $("enddate").value +'&';
-
-    //API Query given inputs
-    $.ajax({
-        type:"GET",
-        url:"https://app.ticketmaster.com/discovery/v2/events.json?city=Bellevue&apikey=Thva5NLv6RrCnjjzN4yuMRNhH38NosOs",
-        url: "https://app.ticketmaster.com/discovery/v2/events.json?"+city+zipCode+searchter+startdate+enddate+"&apikey=Thva5NLv6RrCnjjzN4yuMRNhH38NosOs";
-        async:true,
-        dataType: "json",
-        success: function(json) {
-                    console.log(json);
-                    console.log(json._embedded);
-                    const array1 = json._embedded.events;
-                    array1.forEach(element => 
-                    console.log(element.name)
-                    //console.log(element.image);
-                    ) 
-                },
-        error: function(xhr, status, err) {
-                    // This time, we do not end up here!
-                }
-    });
-
-})
-=======
 // Create current date JS
 var dateEl = $("#date");
 $(dateEl).text(moment(new Date()).format("dddd, MMM Do YYYY, h:mm a"));
@@ -125,4 +89,3 @@ $.ajax({
 
       
 
->>>>>>> 47c8dd04f5e47cca902d0320f1c7d3958f7d2d2b

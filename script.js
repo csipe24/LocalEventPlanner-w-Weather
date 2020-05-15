@@ -12,8 +12,6 @@ function getFirstInfo(){
   var apiKey = "Thva5NLv6RrCnjjzN4yuMRNhH38NosOs";
   var startDateTime = "2020-05-15T13:37:22-07:00";
   var endDateTime = "2021-01-15T13:37:22-07:00";
-  console.log(startDateTime);
-  console.log(apiKey);
   var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=rap&startDateTime="+startDateTime+"&endDateTime="+endDateTime+"&apikey="+apiKey;
   console.log(queryURL);
   $.ajax({
@@ -114,28 +112,40 @@ $.ajax({
   url: queryURL,
   method: "GET"
   }).then(function(response) {
-    console.log(response._embedded.events);
-
     for(i=response._embedded.events.length; i<10; i++){
-    $("#div"+(i+1)).css("display", "none");
-    };
+    $("#div"+(i+1)).css("display", "none");};
     
     for(i=0; i<response._embedded.events.length; i++){
-    $("#div"+(i+1)).css("display", "flex");
-    var eventPic = response._embedded.events[i].images[0].url;
+    $("#div"+(i+1)).css("display", "flex");};
+
+    var events = response._embedded.events;
+    console.log(events);
+
+    for(var i = 0; i < events.length; i++){
+      var eventPics = events[i].images;
+      console.log(eventPics);
+      for(var j = 0; j < eventPics.length; j++){
+        var eventPicWidth = 0;
+        var eventPicURL = "";
+        if(eventPicWidth < eventPics[j].width)
+        {eventPicURL = eventPics[j].url;
+        
+        };
+        console.log(eventPicURL);
+    
     var eventName = response._embedded.events[i].name;
     var eventDes = response._embedded.events[i].dates.start.localDate;
-    // var eventLink = response._embedded.events[i].url;
-
+    var eventPic = eventPicURL;
     $("#pic"+(i+1)).attr("src", eventPic);
     $("#pic"+(i+1)).css({"width": "100%", "height": "80%"});
     $("#name"+(i+1)).html(eventName);
     $("#des"+(i+1)).text(eventDes);
-
-    };
-  })
+  };
 };
 
+});
+
+};
 
 // Store response object into variable
 

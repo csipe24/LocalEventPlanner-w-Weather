@@ -18,7 +18,7 @@
 }
 
 span{
-    margin-left:95px;
+    margin-left:105px;
 }
 }
 
@@ -50,9 +50,12 @@ nav {
 
 }
 #date {
-    
     text-align: center ;
     ;
+}
+
+#locationEl {
+    text-align: center ;
 }
 
 

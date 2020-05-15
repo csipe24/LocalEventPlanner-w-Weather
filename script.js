@@ -2,12 +2,13 @@
 var dateEl = $("#date");
 $(dateEl).text(moment(new Date()).format("dd, MMM Do, h:mm a"));
 
-var date1 = $("#id");
-$(date1).text(moment(new Date()).format("dddd"));
-$(date2).text(moment(new Date()).format("dddd"));
-$(date3).text(moment(new Date()).format("dddd"));
-$(date4).text(moment(new Date()).format("dddd"));
-$(date5).text(moment(new Date()).format("dddd"));
+// var date1 = $("#id");
+// $(date1).text(moment(new Date()).format("dddd"));
+// $(date2).text(moment(new Date()).format("dddd"));
+// $(date3).text(moment(new Date()).format("dddd"));
+// $(date4).text(moment(new Date()).format("dddd"));
+// $(date5).text(moment(new Date()).format("dddd"));
+
 // Create day for weather Div
 
 // Get Location code

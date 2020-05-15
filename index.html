@@ -20,36 +20,9 @@
 
         
   </div>
-
-
-        <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-            Genres
-            </a>
-
-            <div class="navbar-dropdown">
-            <a id="rock" class="navbar-item">
-                Rock
-            </a>
-            <a id="comedy" class="navbar-item">
-                Comedy
-            </a>
-            <a id="country" class="navbar-item">
-                Country
-            </a>
-            <a id="jazz" class="navbar-item">
-                Jazz
-            </a>
-           
-            </div>
-        </div>
-      
-      <div class="eventdate">
-        <form action="/action_page.php">
-        <input class="input is-danger is-rounded" type="date" id="eventdate">
-        </form>
-      </div>      
-         
+          
+  <div id="date">
+  </div>  
           </div>
         </div>
         
@@ -57,12 +30,11 @@
 
         <div id= "search-field" class="field">
             <div class="control">
-              <input class="input is-danger is-rounded" type="text" placeholder="Search" id="searchInput"> <button class="button is-danger is-rounded" id="searchButton">Danger</button>
-            </div>
+              <input id="searchButton" class="input is-danger is-rounded" type="text" placeholder="Search"> <button class="button is-danger is-rounded" style="position: absolute; right: 0;"><img id="searchIcon" src="search.png" width="25" height="40"></button>
+               </div>
           </div>
           
-          <div id="date">
-          </div>
+
 
           <div id="locationEl">
           </div>

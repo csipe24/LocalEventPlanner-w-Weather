@@ -34,12 +34,10 @@ function getWeather(weatherCity){
         console.log(response);
         for(i=0; i<5; i++){
           var wDiv= $("#weather-div");
-          var cityTemp = ("Temp: "+(Math.floor(response.list[i].main.temp - 273.15)*9/5+32)+"°F");
-          var cityHumidity = response.list[i].main.humidity;
-          var cityWindSpeed = response.list[i].wind.speed;
-          $(wDiv).append(cityTemp+"°F");
-          $(wDiv).append("Humidity: "+cityHumidity+"%");
-          $(wDiv).append("Wind Spd: "+cityWindSpeed+"MPH");
+          var cityTemp = $("<span></span>").text(" Temp: "+(Math.floor(response.list[i].main.temp - 273.15)*9/5+32)+"°F");
+          //var cityHumidity = $("<span></span>").text("Humidity: "+ response.list[i].main.humidity);
+          //var cityWindSpeed = $("<span></span>").text("Wind Speed: "+response.list[i].wind.speed);
+          $(wDiv).append(cityTemp);
         };
 
       });
@@ -88,4 +86,5 @@ $.ajax({
 // Append spesific data from object to weather div
 
       
+
 

@@ -17,6 +17,10 @@
     
 }
 
+span{
+    margin-right:30px;
+}
+
 nav {
     height: 5em;
     position: fixed;

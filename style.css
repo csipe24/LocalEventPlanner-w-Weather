@@ -9,7 +9,9 @@
     color: whitesmoke;
 
 }
-
+.navbar {
+    background-color: black;
+}
 #accent {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 3em;
@@ -24,7 +26,7 @@ span{
 nav {
     height: 5em;
     position: fixed;
-   border-bottom: 1px solid rgb(104, 104, 104);
+  ;
 }
 
 .navbar-link {
@@ -46,12 +48,17 @@ nav {
 
 #date-local-bar {
     padding-top: 5em;
+    margin-bottom: -3em;
+    background-color: black;
 
 }
 #date {
     
-    text-align: center ;
-    ;
+    text-align: right ;
+    margin-left: 4em;
+}
+#locationEl {
+    position: relative;
 }
 
 
@@ -69,6 +76,11 @@ article {
 .title{
     color: rgb(104, 104, 104);
     font-family: 'Noto Sans KR', sans-serif;
+    font-size: larger;
+    
+}
+.subtitle {
+    font-size: medium;
 }
 .hero {
     border-bottom: 1px solid rgb(104, 104, 104);
@@ -151,4 +163,20 @@ article {
     color: whitesmoke;
     border-top: solid 1px rgb(104, 104, 104);
     margin-top: 6em;
+}
+
+/* media queries */
+
+@media all and (max-width: 1023px) {
+    #search-field {margin-left: -8em;
+
+
+    }
+    #date-local-bar {
+        margin-left: -31em;
+        
+    }
+    .control {
+        width: 20em;
+    }
 }

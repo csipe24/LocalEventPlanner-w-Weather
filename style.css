@@ -172,10 +172,11 @@ article {
 
 @media all and (max-width: 1023px) {
     #search-field {margin-left: -8em;
+    }
 
 }
 
-/* @media all and (max-width: 768px) {
+@media all and (max-width: 768px) {
     #date-local-bar{ 
         margin-left: -31em;
     }
@@ -186,5 +187,6 @@ article {
     #date{
         text-align: left;
         margin-left: 31em;
-        max-width: 12em;}
-} */
+        max-width: 12em;
+    }
+}

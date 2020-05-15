@@ -60,6 +60,11 @@ article {
 
 }
 
+.hideMe {
+    display: none;
+}
+
+
 /* marquee styling and functionality */
 .marquee {
     height: 50px;

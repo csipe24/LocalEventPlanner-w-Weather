@@ -1,8 +1,14 @@
 // Create current date JS
 var dateEl = $("#date");
-$(dateEl).text(moment(new Date()).format("dddd, MMM Do YYYY, h:mm a"));
+$(dateEl).text(moment(new Date()).format("dd, MMM Do, h:mm a"));
 
-// Create time for weather Div
+var date1 = $("#id");
+$(date1).text(moment(new Date()).format("dddd"));
+$(date2).text(moment(new Date()).format("dddd"));
+$(date3).text(moment(new Date()).format("dddd"));
+$(date4).text(moment(new Date()).format("dddd"));
+$(date5).text(moment(new Date()).format("dddd"));
+// Create day for weather Div
 
 // Get Location code
 navigator.geolocation.getCurrentPosition((position) => {
@@ -20,7 +26,9 @@ var queryURL = url+"key="+apiKey+"&location="+latitude+","+longitude;
           getWeather(weatherCity);
           $("#locationEl").append(weatherCity);
           });
+        
         });
+        
 
 //Create API call to openWeather
 function getWeather(weatherCity){
@@ -43,18 +51,24 @@ function getWeather(weatherCity){
         };
 
       });
+
+ 
+
     };
+
 
 // Create Onclick Function for Search
 var search = $("#searchButton");
 $(search).on('click', function() {
     event.preventDefault();
+    console.log("button clicked");
     getTicketInfo();
 });
 
 // Create API call for ticket master
-function getTicketInfo(weatherCity){
-weatherCity = "seattle";
+function getTicketInfo(){
+var weatherCity = $("#locationEl").text();
+console.log(weatherCity);
 var url = "https://app.ticketmaster.com/discovery/v2/events.json?";
 var keyword =$("#searchInput").val();
 var apiKey = "Thva5NLv6RrCnjjzN4yuMRNhH38NosOs";
@@ -66,8 +80,14 @@ $.ajax({
   url: queryURL,
   method: "GET"
   }).then(function(response) {
-    console.log(response._embedded.events);
-  for(i=0; i<10; i++){
+    console.log(response._embedded.events.length);
+
+    for(i=response._embedded.events.length; i<10; i++){
+    $("#div"+(i+1)).css("display", "none");
+    };
+    
+    for(i=0; i<response._embedded.events.length; i++){
+    $("#div"+(i+1)).css("display", "flex");
     var eventPic = response._embedded.events[i].images[0].url;
     var eventName = response._embedded.events[i].name;
     var eventDes = response._embedded.events[i].dates.start.localDate;

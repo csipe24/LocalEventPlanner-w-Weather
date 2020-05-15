@@ -30,7 +30,7 @@
 
         <div id= "search-field" class="field">
             <div class="control">
-              <input id="searchButton" class="input is-danger is-rounded" type="text" placeholder="Search"> <button class="button is-danger is-rounded" style="position: absolute; right: 0;"><img id="searchIcon" src="search.png" width="25" height="40"></button>
+              <input id="searchInput" class="input is-danger is-rounded" type="text" placeholder="Search"> <button id="searchButton" class="button is-danger is-rounded" style="position: absolute; right: 0;"><img id="searchIcon" src="search.png" width="25" height="40"></button>
                </div>
           </div>
           
@@ -54,7 +54,7 @@
 </section>
 
 <!-- event tiles -->
-<div class="tile is-ancestor">
+<div id="div1" class="tile is-ancestor hideMe">
   <div class="tile is-parent">
     <article id="event-card-1" class="tile is-child box">
       <img id="pic1" src="https://bulma.io/images/placeholders/640x480.png">
@@ -63,7 +63,7 @@
     </article>
   </div>
  
-  <div class="tile is-parent">
+  <div id="div2" class="tile is-parent hideMe">
     <article id="event-card-2" class="tile is-child box">
       <img id="pic2" src="https://bulma.io/images/placeholders/640x480.png">
       <p id="name2" class="title">Event Name2</p>
@@ -72,7 +72,7 @@
   </div>
 </div>
 
-<div class="tile is-ancestor">
+<div id="div3" class="tile is-ancestor hideMe">
   <div class="tile is-parent">
     <article id="event-card-3" class="tile is-child box">
       <img id="pic3" src="https://bulma.io/images/placeholders/640x480.png">
@@ -81,7 +81,7 @@
     </article>
   </div>
 
-  <div class="tile is-parent">
+  <div id="div4" class="tile is-parent hideMe">
     <article id="event-card-4" class="tile is-child box">
       <img id="pic4" src="https://bulma.io/images/placeholders/640x480.png">
       <p id="name4" class="title">Event Name4</p>
@@ -89,7 +89,7 @@
     </article>
   </div>
 
-      <div class="tile is-parent">
+      <div id="div5" class="tile is-parent hideMe">
         <article id="event-card-5" class="tile is-child box">
           <img id="pic5" src="https://bulma.io/images/placeholders/640x480.png">
           <p id="name5" class="title">Event Name5</p>
@@ -99,7 +99,7 @@
     </div>
 </div>
 
-<div class="tile is-ancestor">
+<div id="div6" class="tile is-ancestor hideMe">
   <div class="tile is-parent">
     <article id="event-card-6" class="tile is-child box">
       <img id="pic6" src="https://bulma.io/images/placeholders/640x480.png">
@@ -108,7 +108,7 @@
     </article>
   </div>
   
-  <div class="tile is-parent">
+  <div id="div7" class="tile is-parent hideMe">
     <article id="event-card-7" class="tile is-child box">
       <img id="pic7" src="https://bulma.io/images/placeholders/640x480.png">
       <p id="name7" class="title">Event Name7</p>
@@ -117,7 +117,7 @@
   </div>
 </div>
 
-<div class="tile is-ancestor">
+<div id="div8" class="tile is-ancestor hideMe">
   <div class="tile is-parent">
     <article id="event-card-8" class="tile is-child box">
       <img id="pic8" src="https://bulma.io/images/placeholders/640x480.png">
@@ -125,7 +125,7 @@
       <p id="des8" class="subtitle">Event description8</p>
     </article>
   </div>
-  <div class="tile is-parent">
+  <div id="div9" class="tile is-parent hideMe">
     <article id="event-card-9" class="tile is-child box">
       <img id="pic9" src="https://bulma.io/images/placeholders/640x480.png">
       <p id="name9" class="title">Event Name9</p>
@@ -133,7 +133,7 @@
     </article>
 
   </div>
-      <div class="tile is-parent">
+      <div id="div10" class="tile is-parent hideMe">
         <article id="event-card-10" class="tile is-child box">
           <img id="pic10" src="https://bulma.io/images/placeholders/640x480.png">
           <p id="name10" class="title">Event Name10</p>
@@ -145,7 +145,7 @@
 
 
 <!-- pagination -->
-<nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+<!-- <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
   <a class="pagination-previous">Previous</a>
   <a class="pagination-next">Next page</a>
   <ul class="pagination-list">
@@ -157,7 +157,7 @@
     <li><span class="pagination-ellipsis">&hellip;</span></li>
     <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
   </ul>
-</nav>
+</nav> -->
 
 
 </body>

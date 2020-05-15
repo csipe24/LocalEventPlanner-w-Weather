@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 //Listner for on Submit
 
 
@@ -54,6 +55,8 @@ $("#target").submit(function(event){
 //Image*/
 =======
 =======
+=======
+>>>>>>> master
 // Create current date JS
 var dateEl = $("#date");
 $(dateEl).text(moment(new Date()).format("dddd, MMM Do YYYY, h:mm a"));
@@ -145,5 +148,8 @@ $.ajax({
 
       
 
+<<<<<<< HEAD
 >>>>>>> 47c8dd04f5e47cca902d0320f1c7d3958f7d2d2b
+>>>>>>> master
+=======
 >>>>>>> master

@@ -189,4 +189,32 @@ article {
         margin-left: 31em;
         max-width: 12em;
     }
+    #nav-elements {
+        padding-left: 0em;
+    }
+    #logo {
+        font-size: 2em;
+    }
+    #accent{
+        font-size: 2em;
+    }
+    .control {
+        width: 11em;
+        margin-left: 7.25em;
+    }
+    .marquee p {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        line-height: 50px;
+        text-align: center;
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        -moz-animation: scroll-left 4s linear infinite;
+        -webkit-animation: scroll-left 4s linear infinite;
+        animation: scroll-left 40s linear infinite;
+    }
+    
 }

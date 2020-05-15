@@ -2,15 +2,6 @@
 var dateEl = $("#date");
 $(dateEl).text(moment(new Date()).format("dd, MMM Do, h:mm a"));
 
-// var date1 = $("#id");
-// $(date1).text(moment(new Date()).format("dddd"));
-// $(date2).text(moment(new Date()).format("dddd"));
-// $(date3).text(moment(new Date()).format("dddd"));
-// $(date4).text(moment(new Date()).format("dddd"));
-// $(date5).text(moment(new Date()).format("dddd"));
-
-// Create day for weather Div
-
 // Get Location code
 navigator.geolocation.getCurrentPosition((position) => {
 var latitude = position.coords.latitude;
@@ -27,10 +18,8 @@ var queryURL = url+"key="+apiKey+"&location="+latitude+","+longitude;
           getWeather(weatherCity);
           $("#locationEl").append(weatherCity);
           });
-        
         });
         
-
 //Create API call to openWeather
 function getWeather(weatherCity){
   var url = "https://api.openweathermap.org/data/2.5/forecast?";
@@ -41,12 +30,30 @@ function getWeather(weatherCity){
         method: "GET"
         }).then(function(response) {
         console.log(response);
+        var wDiv= $("#weather-div");
+        $(wDiv).text("Five Day Forecast:");
         for(i=0; i<5; i++){
-          var wDiv= $("#weather-div");
-          var cityTemp = $("<span></span>").text(" Temp: "+(Math.floor(response.list[i].main.temp - 273.15)*9/5+32)+"°F");
-          //var cityHumidity = $("<span></span>").text("Humidity: "+ response.list[i].main.humidity);
-          //var cityWindSpeed = $("<span></span>").text("Wind Speed: "+response.list[i].wind.speed);
-          $(wDiv).append(cityTemp);
+          var date = (moment(new Date()).add(i+1, 'd').format("dddd"));
+          var img =  response.list[i].weather[0].icon;
+          var imgURL = "https://openweathermap.org/img/wn/"+img+"@2x.png";
+          var weatherIcon = new Image();
+          weatherIcon.src = imgURL;
+          weatherIcon.style.width = "60px";
+          weatherIcon.style.height = "50px";
+          weatherIcon.style.position = "inherit";
+
+          var weathDes = response.list[i].weather[0].main;
+    
+          var cityTemp = ((Math.floor(response.list[i].main.temp - 273.15)*9/5+32));
+          // if{
+          //   cityTemp
+          // }
+          var cityWeather = $("<span></span>").text(date+" - "+cityTemp+"°F"+" - "+weathDes);
+      
+          
+          $(wDiv).append(cityWeather);
+          $(wDiv).append(weatherIcon);
+ 
         };
 
       });

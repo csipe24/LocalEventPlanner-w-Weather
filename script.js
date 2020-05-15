@@ -2,6 +2,43 @@
 var dateEl = $("#date");
 $(dateEl).text(moment(new Date()).format("dd, MMM Do, h:mm a"));
 
+setInterval(function(){
+$(dateEl).text(moment(new Date()).format("dd, MMM Do, h:mm a"));
+},60000);
+
+getFirstInfo();
+// API Call to Start Page
+function getFirstInfo(){
+  var apiKey = "Thva5NLv6RrCnjjzN4yuMRNhH38NosOs";
+  var startDateTime = "2020-05-15T13:37:22-07:00";
+  var endDateTime = "2021-01-15T13:37:22-07:00";
+  console.log(startDateTime);
+  console.log(apiKey);
+  var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=rap&startDateTime="+startDateTime+"&endDateTime="+endDateTime+"&apikey="+apiKey;
+  console.log(queryURL);
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+    }).then(function(response) {
+      console.log(response._embedded.events);
+      for(i=response._embedded.events.length; i<10; i++){
+      $("#div"+(i+1)).css("display", "none");
+      };
+      
+      for(i=0; i<response._embedded.events.length; i++){
+      $("#div"+(i+1)).css("display", "flex");
+      var eventPic = response._embedded.events[i].images[0].url;
+      var eventName = response._embedded.events[i].name;
+      var eventDes = response._embedded.events[i].dates.start.localDate;
+      var eventLink = response._embedded.events[i].url;
+      $("#pic"+(i+1)).attr("src", eventPic);
+      $("#pic"+(i+1)).css({"width": "100%", "height": "80%"});
+      $("#name"+(i+1)).html(eventName);
+      $("#des"+(i+1)).text(eventDes);
+      };
+    })
+  };
+
 // Get Location code
 navigator.geolocation.getCurrentPosition((position) => {
 var latitude = position.coords.latitude;
@@ -43,23 +80,14 @@ function getWeather(weatherCity){
           weatherIcon.style.position = "inherit";
 
           var weathDes = response.list[i].weather[0].main;
-    
           var cityTemp = ((Math.floor(response.list[i].main.temp - 273.15)*9/5+32));
-          // if{
-          //   cityTemp
-          // }
-          var cityWeather = $("<span></span>").text(date+" - "+cityTemp+"°F"+" - "+weathDes);
+          var cityWeather = $("<span></span>").text(date+"   "+cityTemp+"°F"+"   "+weathDes);
       
-          
           $(wDiv).append(cityWeather);
           $(wDiv).append(weatherIcon);
  
         };
-
       });
-
- 
-
     };
 
 
@@ -73,8 +101,8 @@ $(search).on('click', function() {
 
 // Create API call for ticket master
 function getTicketInfo(){
-var weatherCity = $("#locationEl").text();
-console.log(weatherCity);
+// var weatherCity = $("#locationEl").text();
+var weatherCity = "seattle";
 var url = "https://app.ticketmaster.com/discovery/v2/events.json?";
 var keyword =$("#searchInput").val();
 var apiKey = "Thva5NLv6RrCnjjzN4yuMRNhH38NosOs";
@@ -86,7 +114,9 @@ $.ajax({
   url: queryURL,
   method: "GET"
   }).then(function(response) {
-    console.log(response);
+
+    console.log(response._embedded.events);
+
 
     for(i=response._embedded.events.length; i<10; i++){
     $("#div"+(i+1)).css("display", "none");
@@ -97,7 +127,7 @@ $.ajax({
     var eventPic = response._embedded.events[i].images[0].url;
     var eventName = response._embedded.events[i].name;
     var eventDes = response._embedded.events[i].dates.start.localDate;
-    var eventLink = response._embedded.events[i].url;
+    // var eventLink = response._embedded.events[i].url;
 
     $("#pic"+(i+1)).attr("src", eventPic);
     $("#pic"+(i+1)).css({"width": "100%", "height": "80%"});

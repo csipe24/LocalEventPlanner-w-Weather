@@ -17,6 +17,10 @@
     
 }
 
+span{
+    margin-right:30px;
+}
+
 nav {
     height: 5em;
     position: fixed;
@@ -33,8 +37,24 @@ nav {
     padding-top: 20px;
     padding-right: 5px;
 }
+.control {
+    width: 30em;
+    margin-left: 8em;
+}
 
 /* body styling */
+
+#date-local-bar {
+    padding-top: 5em;
+
+}
+#date {
+    
+    text-align: center ;
+    ;
+}
+
+
 body {
     background-color: black;
 }
@@ -56,7 +76,7 @@ article {
 }
 
 .hero-body {
-    padding: 3em 0 1em 0;
+    padding: 1em 0 1em 0;
 
 }
 
@@ -75,6 +95,7 @@ article {
     font-size: 2em;
     white-space: nowrap;
     
+    
 }
 
 .marquee p {
@@ -91,6 +112,8 @@ article {
     -webkit-animation: scroll-left 3s linear infinite;
     animation: scroll-left 30s linear infinite;
 }
+
+
 
 @-moz-keyframes scroll-left {
     0% {

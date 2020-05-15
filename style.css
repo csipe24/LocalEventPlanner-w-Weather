@@ -173,6 +173,12 @@ article {
 @media all and (max-width: 1023px) {
     #search-field {margin-left: -8em;
     }
+    .title {
+        font-size: medium;
+    }
+    .subtitle {
+        font-size: small;
+    }
 
 }
 
@@ -215,6 +221,12 @@ article {
         -moz-animation: scroll-left 4s linear infinite;
         -webkit-animation: scroll-left 4s linear infinite;
         animation: scroll-left 40s linear infinite;
+    }
+    .title {
+        font-size: large;
+    }
+    .subtitle {
+        font-size: medium;
     }
     
 }

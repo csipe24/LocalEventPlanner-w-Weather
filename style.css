@@ -22,7 +22,7 @@
 span{
     margin-left:105px;
 }
-}
+
 
 nav {
     height: 5em;
@@ -62,12 +62,8 @@ nav {
 }
 #locationEl {
     position: relative;
+    text-align: left ;
 }
-
-#locationEl {
-    text-align: center ;
-}
-
 
 body {
     background-color: black;
@@ -129,7 +125,7 @@ article {
     transform: translateX(100%);
     -moz-animation: scroll-left 3s linear infinite;
     -webkit-animation: scroll-left 3s linear infinite;
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 40s linear infinite;
 }
 
 
@@ -176,14 +172,21 @@ article {
 
 @media all and (max-width: 1023px) {
     #search-field {margin-left: -8em;
-
-
     }
-    #date-local-bar {
+
+}
+
+@media all and (max-width: 768px) {
+    #date-local-bar{ 
         margin-left: -31em;
-        
     }
-    .control {
-        width: 20em;
+    #locationEl{ 
+        max-width: 15em;
+
+    }
+    #date{
+        text-align: left;
+        margin-left: 31em;
+        max-width: 12em;
     }
 }

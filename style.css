@@ -62,12 +62,8 @@ nav {
 }
 #locationEl {
     position: relative;
+    text-align: left ;
 }
-
-#locationEl {
-    text-align: center ;
-}
-
 
 body {
     background-color: black;
@@ -174,21 +170,12 @@ article {
 
 /* media queries */
 
-/* @media all and (max-width: 1023px) {
+@media all and (max-width: 1023px) {
     #search-field {margin-left: -8em;
 
-
-    }
-    #date-local-bar {
-        margin-left: -31em;
-        
-    }
-    .control {
-        width: 20em;
-    }
 }
 
-@media all and (max-width: 768px) {
+/* @media all and (max-width: 768px) {
     #date-local-bar{ 
         margin-left: -31em;
     }

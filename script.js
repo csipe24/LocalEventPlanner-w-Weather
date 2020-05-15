@@ -32,8 +32,18 @@ function getWeather(weatherCity){
         method: "GET"
         }).then(function(response) {
         console.log(response);
-        });
-      };
+        for(i=0; i<5; i++){
+          var wDiv= $("#weather-div");
+          var cityTemp = ("Temp: "+(Math.floor(response.list[i].main.temp - 273.15)*9/5+32)+"°F");
+          var cityHumidity = response.list[i].main.humidity;
+          var cityWindSpeed = response.list[i].wind.speed;
+          $(wDiv).append(cityTemp+"°F");
+          $(wDiv).append("Humidity: "+cityHumidity+"%");
+          $(wDiv).append("Wind Spd: "+cityWindSpeed+"MPH");
+        };
+
+      });
+    };
 
 // Create Onclick Function for Search
 var search = $("#searchButton");

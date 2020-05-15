@@ -22,7 +22,7 @@
 span{
     margin-left:95px;
 }
-}
+
 
 nav {
     height: 5em;
@@ -123,7 +123,7 @@ article {
     transform: translateX(100%);
     -moz-animation: scroll-left 3s linear infinite;
     -webkit-animation: scroll-left 3s linear infinite;
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 40s linear infinite;
 }
 
 
@@ -168,7 +168,7 @@ article {
 
 /* media queries */
 
-@media all and (max-width: 1023px) {
+/* @media all and (max-width: 1023px) {
     #search-field {margin-left: -8em;
 
 
@@ -181,3 +181,17 @@ article {
         width: 20em;
     }
 }
+
+@media all and (max-width: 768px) {
+    #date-local-bar{ 
+        margin-left: -31em;
+    }
+    #locationEl{ 
+        max-width: 15em;
+
+    }
+    #date{
+        text-align: left;
+        margin-left: 31em;
+        max-width: 12em;}
+} */

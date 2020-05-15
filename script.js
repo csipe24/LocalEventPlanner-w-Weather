@@ -86,7 +86,7 @@ $.ajax({
   url: queryURL,
   method: "GET"
   }).then(function(response) {
-    console.log(response._embedded.events.length);
+    console.log(response);
 
     for(i=response._embedded.events.length; i<10; i++){
     $("#div"+(i+1)).css("display", "none");

@@ -29,9 +29,14 @@ function getFirstInfo(){
       var eventName = response._embedded.events[i].name;
       var eventDes = response._embedded.events[i].dates.start.localDate;
       var eventLink = response._embedded.events[i].url;
+
       $("#pic"+(i+1)).attr("src", eventPic);
+      $("#pic"+(i+1)).addClass("link");
+  
       $("#pic"+(i+1)).css({"width": "100%", "height": "80%"});
       $("#name"+(i+1)).html(eventName);
+  
+      $("#name"+(i+1)).attr("href", eventLink);
       $("#des"+(i+1)).text(eventDes);
       };
     })
@@ -64,7 +69,6 @@ function getWeather(weatherCity){
         url: queryURL,
         method: "GET"
         }).then(function(response) {
-        console.log(response);
         var wDiv= $("#weather-div");
         $(wDiv).text("Five Day Forecast:");
         for(i=0; i<5; i++){
@@ -93,7 +97,6 @@ function getWeather(weatherCity){
 var search = $("#searchButton");
 $(search).on('click', function() {
     event.preventDefault();
-    console.log("button clicked");
     getTicketInfo();
 });
 
@@ -123,34 +126,37 @@ $.ajax({
 
     for(var i = 0; i < events.length; i++){
       var eventPics = events[i].images;
-      console.log(eventPics);
+      
       for(var j = 0; j < eventPics.length; j++){
         var eventPicWidth = 0;
         var eventPicURL = "";
         if(eventPicWidth < eventPics[j].width)
         {eventPicURL = eventPics[j].url;
-        
         };
-        console.log(eventPicURL);
+  
     
     var eventName = response._embedded.events[i].name;
     var eventDes = response._embedded.events[i].dates.start.localDate;
     var eventPic = eventPicURL;
+    var eventLink = response._embedded.events[i].url;
+
     $("#pic"+(i+1)).attr("src", eventPic);
+    $("#pic"+(i+1)).addClass("link");
+
     $("#pic"+(i+1)).css({"width": "100%", "height": "80%"});
     $("#name"+(i+1)).html(eventName);
+
+    $("#name"+(i+1)).attr("href", eventLink);
     $("#des"+(i+1)).text(eventDes);
   };
 };
-
 });
 
 };
 
-// Store response object into variable
-
-// Append spesific data from object to weather div
-
-      
-
-
+$(".title").click(function() {
+  var goToTicket = $(this).attr('href');
+  console.log(goToTicket);
+  window.location = goToTicket;
+  console.log("Pic Test");
+});

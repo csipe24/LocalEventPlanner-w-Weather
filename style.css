@@ -47,6 +47,11 @@ nav {
 
 /* body styling */
 
+.title:hover {
+    color:red;
+}
+
+
 #date-local-bar {
     padding-top: 5em;
     margin-bottom: -3em;

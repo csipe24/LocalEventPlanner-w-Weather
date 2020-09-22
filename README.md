@@ -1,4 +1,11 @@
-# TeamProject1
+# Local Event Planner w/Weather App (Project 1)
+
+## Description
+Welcome to our Local Event Planner App. This application uses user location to combine local weather reports and local events onto one page!
+Our application uses two APIs (openWeather & Ticketmaster) to gather information.
+
+## Usage
+App is open source and free to use.
 
 ## User Story
 "Should I pack an umbrella?"
@@ -20,3 +27,11 @@ When I select an event,
 Then in depth information about that event and the corresponding weather information for that day is presented
 When I choose an event that I would like to attend
 Then I am redirected to ticketmaster?
+
+## Contributors
+
+- [Chris](https://github.com/chrisjm093)
+- [Ju](https://github.com/dannylee1009)
+- [Chris](https://github.com/csipe24)
+- [Christian](https://github.com/TheChozzy)
+
